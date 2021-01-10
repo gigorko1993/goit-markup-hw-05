@@ -346,6 +346,31 @@ body {
   width: 100%;
 }
 
+.description-thumb {
+  position: relative;
+  display: block;
+}
+
+.description-actions {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  color: var(--white-text-color);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+}
+
 /* our team */
 .our-team {
   background-color: var(--bg-color-secondary);
