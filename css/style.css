@@ -16,6 +16,8 @@
   --border-color: #eeeeee;
 
   --bg-hero: #c4c4c4;
+
+  --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* color of main text #757575 */
@@ -127,9 +129,10 @@ body {
   letter-spacing: 0.02em;
 }
 
-.site-nav .link.current {
+/* зафарбовує лінки current в хедері в синій колір */
+/* .site-nav .link.current {
   color: var(--accent-color);
-}
+} */
 
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -354,21 +357,24 @@ body {
 .description-actions {
   position: absolute;
   bottom: 0;
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
   padding-top: 27px;
   padding-bottom: 27px;
 
   background-color: rgba(47, 48, 58, 0.8);
   color: var(--white-text-color);
 
+  width: 100%;
+}
+
+.description-actions > p {
+  margin-top: 0;
+  margin-bottom: 0;
+
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  text-align: center;
-  width: 100%;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* our team */
