@@ -12,10 +12,11 @@
   --logo-text-black: #000000;
   --bg-hero-footer: #2f303a;
   --bg-footer-icon: rgba(255, 255, 255, 0.1);
+  --bg-hero: #c4c4c4;
+
+  --bg-backdrop: rgba(0, 0, 0, 0.2);
 
   --border-color: #eeeeee;
-
-  --bg-hero: #c4c4c4;
 
   --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -236,12 +237,11 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-.hero .link {
-  display: inline-block;
+.hero .button {
+  /* display: inline-block; */
   border-radius: 4px;
   padding: 10px 32px;
   border: 1px solid transparent;
-  border-radius: 4px;
 
   background-color: var(--accent-color);
   color: var(--white-text-color);
@@ -250,14 +250,18 @@ body {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
+
+  outline: 0;
 }
 
-.hero .link:hover,
-.hero .link:focus {
+.hero .button:hover,
+.hero .button:focus {
   background-color: var(--bg-color-white);
   color: var(--accent-color);
 
   border: 1px solid var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12) inset;
 }
 
 /* section */
@@ -571,6 +575,51 @@ body {
   background-color: var(--accent-color);
 }
 
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: var(--bg-backdrop);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-width: 530px;
+  min-height: 580px;
+
+  background-color: var(--bg-color-white);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  background: #ffffff;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: 0;
+}
+
 /* portfolio */
 .portfolio {
   background-color: var(--bg-color-white);
@@ -589,16 +638,14 @@ body {
   margin-bottom: 50px;
 }
 
-.button {
+.portfolio .button {
   padding: 6px 22px;
   border-radius: 4px;
   border: 0 solid transparent;
 
-  background: #f5f4fa;
   color: var(--primary-text-color);
+  background: #f5f4fa;
 
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;

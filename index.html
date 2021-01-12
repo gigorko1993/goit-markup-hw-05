@@ -53,7 +53,7 @@
                     Эффективные решения для вашего бизнеса
                 </h1>
             </div>
-                <a href="#" class="link">Заказать услугу</a>
+                <button class="button" data-open-modal>Заказать услугу</button>
         </section>
         <!--Feauture-->
         <section class="section">
@@ -354,9 +354,13 @@
             <ul class="list">
                 <li class="item">
                     <address class="footer-addres">г. Киев, пр-т Леси Украинки, 26</address>
-                </li class="item">
-                <li class="item"><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
-                <li class="item"><a href="tel:+380961111111" class="link">+38 096 111 11 11</a></li>
+                </li>
+                <li class="item">
+                    <a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a>
+                </li>
+                <li class="item">
+                    <a href="tel:+380961111111" class="link">+38 096 111 11 11</a>
+                </li>
             </ul>
         </div>
         <div class="social-container">
@@ -390,10 +394,36 @@
                         </svg>
                     </a>
                 </li>
-            </ul>
+            </ul>   
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-backdrop>
+        <div class="modal">
+            <button class="close-button" data-close-modal>&#10006</button>
+        </div>
+    </div>
+    <script>
+        const refs = {
+            openModalBtn: document.querySelector("[data-open-modal]"),
+            closeModalBtn: document.querySelector("[data-close-modal]"),
+            backdrop: document.querySelector("[data-backdrop]"),
+        };
+
+        refs.openModalBtn.addEventListener("click", toggleModal);
+        refs.closeModalBtn.addEventListener("click", toggleModal);
+
+        refs.backdrop.addEventListener("click", logBackdropClick);
+        
+
+        function toggleModal() {
+            refs.backdrop.classList.toggle("is-hidden");
+        }
+
+        function logBackdropClick() {
+            console.log("Ето клик в бекдроп");
+        }
+    </script>
 </body>
 
 </html>
