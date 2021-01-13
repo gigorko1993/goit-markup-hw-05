@@ -40,6 +40,10 @@ body {
   letter-spacing: 0.03em;
 }
 
+*:focus {
+  outline: none;
+}
+
 .list {
   list-style: none;
 
@@ -693,10 +697,6 @@ body {
 .list-image {
   display: flex;
   flex-wrap: wrap;
-  /* margin-top: -15px;
-  margin-left: -15px;
-  margin-right: -15px;
-  margin-bottom: -15px; */
 }
 .list-image .link {
   display: block;
@@ -766,12 +766,14 @@ body {
   transition-timing-function: var(--cubic-bezier);
 }
 
-.link-overlay:hover .card-overlay::after {
+.link-overlay:hover .card-overlay::after,
+.link-overlay:focus .card-overlay::after {
   transform: translateY(-100%);
   z-index: 1;
 }
 
-.link-overlay:hover .card-text-overlay {
+.link-overlay:hover .card-text-overlay,
+.link-overlay:focus .card-text-overlay {
   transform: translateY(0px);
   z-index: 2;
 }
