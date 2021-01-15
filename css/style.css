@@ -369,14 +369,20 @@ body {
 
 .description-actions {
   position: absolute;
+  left: 0;
   bottom: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
+  /* padding-top: 27px;
+  padding-bottom: 27px; */
 
   background-color: rgba(47, 48, 58, 0.8);
   color: var(--white-text-color);
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
+  height: 70px;
 }
 
 .description-actions > p {
@@ -387,7 +393,7 @@ body {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
-  text-align: center;
+  /* text-align: center; */
 }
 
 /* our team */
@@ -774,17 +780,15 @@ body {
 
 .link-overlay:hover .card-text-overlay,
 .link-overlay:focus .card-text-overlay {
-  transform: translateY(0px);
+  transform: translate(-50%, -50%);
   z-index: 2;
 }
 
 .card-text-overlay {
   position: absolute;
-  top: 63px;
-  left: 24px;
-  bottom: 63px;
-  right: 24px;
-  transform: translateY(307px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
 
   width: 322px;
   height: 168px;
